@@ -1,267 +1,440 @@
-<!--
-=========================================================
-* BLK Design System- v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/blk-design-system
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta charset="utf8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
         
+        <!-- Twitter Metas -->
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@ArcadiumETC" />
         <meta name="twitter:title" content="Arcadium Network" />
-        <meta name="twitter:description" content="Arcadium Network is a Platform built upon Commonwealth and ETC, Working towards a more decentralised future. Favouring the Pure wallets, Arcadium Network is aiming for a wholly Decentralized Future!" />
-        <meta name="twitter:image" content="https://flux.arcadium.network/assets/img/og_img.png"/>
+        <meta name="twitter:description" content="Arcadium Network is a Platform building upon Ethereum Classic, Working towards a more decentralised future." />
+        <meta name="twitter:image" content="https://arcadium.network/assets/img/coin.png"/>
         
-        <meta property="og:url" content="https://flux.arcadium.network" />
+        <!-- OpenGraph Metas -->
+        <meta property="og:url" content="https://arcadium.network" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Flux" />
-        <meta property="og:description" content="Flux is an alternative interface for Commonwealth Planetary Prosperity - Try it today!" />
-        <meta property="og:image" content="https://flux.arcadium.network/assets/img/og_img.png"/>
+        <meta property="og:title" content="Arcadium Network" />
+        <meta property="og:description" content="Arcadium Network - a Platform building on Ethereum Classic, Working towards a decentralised future." />
+        <meta property="og:image" content="https://flux.arcadium.network/assets/img/coin.png"/>
         
-        <meta name="description" content="Arcadium Network is a Platform built upon Commonwealth and ETC, Working towards a more decentralised future. Favouring the Pure wallets, Arcadium Network is aiming for a wholly Decentralized Future!">
+        <title>Arcadium Network</title>
         
+        <meta name="description" content="Arcadium Network - a Platform building on Ethereum Classic, Working towards a decentralised future.">
         <meta name="keywords" content="Payments, Payment Processing, Live Streaming, ETC Dapps, Ethereum Classic, ETC, Universal Basic Income Dapp, UBI Dapp, UBI Ethereum, Universal Basic income Ethereum, Employment Insurance, Blockchain Insurance, Coops, Cooperative, Blockchain, Blockchain Technology, Arcadium, Arcadium Network, Flux, Korax, Power Inc, Vault, Race Arena">
-        
-        <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-        <link rel="icon" type="image/png" href="assets/img/etherum.png">
-        <title>Games | Arcadium Network</title>
-        
-        <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
-        
+
+        <!-- CSS -->
         <link rel="stylesheet" href="assets/css/alertify.min.css" />
-        <link href="assets/css/nucleo-icons.css" rel="stylesheet" />
-        
-        
+
         <link rel="stylesheet" href="assets/css/farmer.css" />
         <link rel="stylesheet" href="assets/css/animate.css" />
         <link rel="stylesheet" href="assets/css/scrollFix.css" />
         <link rel="stylesheet" href="assets/css/professional_style.css" />
         <link rel="stylesheet" href="assets/css/bootstrap.carousel.css" />
         <link rel="stylesheet" href="assets/css/themes/default.min.css" />
-        
-        <link href="assets/css/blk-design-system.css?v=1.0.0" rel="stylesheet" />
     
-        <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
+    
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
         <script src="assets/js/modernizr.min.js"></script>
+        <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
+
+        <!-- Bootstrap theme -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/lux/bootstrap.min.css">
+
+        <link rel="icon" type="image/png" href="assets/img/etc.png">
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156455321-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-156455321-1');
+        </script>
         
-        <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
-            new Crate({
-                server: '660804178284642314',
-                channel: '660804178788089902',
-                shard: 'https://disweb.dashflo.net'
-            })
+        <script>
+            var clipboard = new Clipboard(".donateLink");
         </script>
     </head>
 
-    <body class="landing-page">
+    <body class="bg-primary text-white wallpaper1">
         <div class="background-image">
             <img src="assets/img/background.gif" style="background: background-image; height: auto; width: 100%; position: fixed; z-index: -99;">
         </div>
         
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="100">
-            <div class="container">
-                <div class="navbar-translate">
-                    <a class="navbar-brand" href="index.html" rel="tooltip" title="Homepage" data-placement="bottom">
-                        <span>Games</span> | Arcadium Network
-                    </a>
-                    
-                    <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#dApps" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                        <span><i class="fas fa-cubes text-success"> Dapps</i></span>
-                        
-                    </button>
-                    <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-bar bar1"></span>
-                        <span class="navbar-toggler-bar bar2"></span>
-                        <span class="navbar-toggler-bar bar3"></span>
-                    </button>                    
-                </div>
-                
-                <div class="collapse navbar-collapse justify-content-end" id="dApps">
-                    <div class="navbar-collapse-header">
-                        <div class="row">
-                            <div class="col-6 collapse-brand">
-                                <a>Games | Arcadium Network</a>
-                            </div>
-                            <div class="col-6 collapse-close text-right">
-                                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#dApps" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                                    <i class="tim-icons icon-simple-remove"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <ul class="navbar-nav">
-                        <li class="nav-item p-0">
-                            <a class="nav-link" rel="tooltip" title="Become a Power Inc. Tycoon" data-placement="bottom" href="powerinc.html" target="_self">
-                                <i class="fas fa-bolt text-success"></i> Power Inc                                
-                            </a>
-                        </li>
-                        
-                        <li class="nav-item p-0">
-                            <a class="nav-link" rel="tooltip" title="Enter the Race Arena" data-placement="bottom" href="racearena.html" target="_self">
-                                <i class="fas fa-flag-checkered text-success"></i> Race Arena                                
-                            </a>
-                        </li>                                      
-                    </ul>
-                </div>
-                
-                <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                    <div class="navbar-collapse-header">
-                        <div class="row">
-                            <div class="col-6 collapse-brand">
-                                <a>Games | Arcadium Network</a>
-                            </div>
-                            <div class="col-6 collapse-close text-right">
-                                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                                    <i class="tim-icons icon-simple-remove"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <ul class="navbar-nav">
-                        <li class="nav-item p-0">
-                            <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/ArcadiumETC" target="_blank">
-                                <i class="fab fa-twitter"></i>
-                                <p class="d-lg-none d-xl-none">Twitter</p>
-                            </a>
-                        </li>
-                        
-                        <li class="nav-item p-0">
-                            <a class="nav-link" rel="tooltip" title="Join our Discord" data-placement="bottom" href="https://discord.gg/7fCvU2h" target="_blank">
-                                <i class="fab fa-discord"></i>
-                                <p class="d-lg-none d-xl-none">Discord</p>
-                            </a>
-                        </li>
-                        
-                        <li class="nav-item p-0">
-                            <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/ArcadiumNetwork" target="_blank">
-                                <i class="fab fa-instagram"></i>
-                                <p class="d-lg-none d-xl-none">Instagram</p>
-                            </a>
-                        </li>
-                        
-                        <li class="nav-item p-0">
-                            <a class="nav-link" rel="tooltip" title="Buy, Sell and Transfer Flux Points" data-placement="bottom" href="https://flux.arcadium.network/flux.html" target="_self">
-                                <i class="fas fa-dollar-sign text-success"></i> Flux                                
-                            </a>
-                        </li>                                               
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <a class="navbar-brand" href="index.html"><img src="./assets/img/logo.png" alt="Logo" style="width:40px;"> GAMES</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                        <li class="nav-item">
-                            <a class="nav-link" rel="tooltip" title="Check out the Code" data-placement="bottom" href="https://github.com/ArcadiumNetwork" target="_blank"><i class="fab fa-github text-success"></i> GitHub</a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="https://flux.arcadium.network/flux.html"><i class="fas fa-coins text-success"></i> Flux</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://flux.arcadium.network/timelock.html"><i class="far fa-clock text-success"></i> Timelock</a></li>
+                </ul>
+            
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <i class="fas fa-cubes text-success"></i> Social <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right border-success bg-primary text-white" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-white" href="https://discord.gg/7fCvU2h" target="_blank"><i class="fas fa-flag-checkered text-success"></i> Discord</a>
+                            <a class="dropdown-item text-white" href="https://twitter.com/ArcadiumETC" target="_blank"><i class="fas fa-bolt text-success"></i> Twitter</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </nav>
         <br />
         <br />
         <br />
         <br />
-        <!-- End Navbar -->
+        <br />
+        <br />
+        <br />
         
-        <div class="wrapper">
-            <div class="page-header">
-                <img src="assets/img/blob.png" class="path">
-                <img src="assets/img/path2.png" class="path2">
-                <img src="assets/img/triunghiuri.png" class="shapes triangle">
-                <img src="assets/img/waves.png" class="shapes wave">
-                <img src="assets/img/patrat.png" class="shapes squares">
-                <img src="assets/img/cercuri.png" class="shapes circle">
-                
-                <div class="content-center">
-                    <div class="row jumbotron bg-dark text-white animated fadeInDown delay-1s">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <div class="jumbotron bg-primary text-white">
                         <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <h3>Arcadium Games</h3>
-                                    <p>Let the Fun Begin!</p>
+                                    <img src="assets/img/powerinc_icon.png" width="180px" height="180px" /><br />
+                                    <br />
+                                    <h3 class="text-white">Power Inc</h3>
+                                    <p class="text-white">Buy and Sell Power on the Global Grid</p>
+                                    <a class="btn btn-block btn-sm btn-outline-success" href="powerinc.html">Play Now</a><br />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="row row-grid justify-content-between align-items-center text-left">
-                        <div class="col-md-6 text-center">
-                            <div class="card card-plain animated fadeInLeft delay-1s" style="background: rgba(26, 26, 26, .85); border-color: rgb(236, 37, 13);">
-                                <div class="card-header"> </div>
-                                <div class="card-body">
-                                    <a href="racearena.html">
-                                        <img src="assets/img/content/content2.png" />
-                                    </a>
-                                    <h3 class="text-white text-center">Race Arena</h3>
-                                    <small>5 Players. 4 Winners. 1 Loser.</small>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6 text-center">
-                            <div class="card card-plain animated fadeInRight delay-1s" style="background: rgba(26, 26, 26, .85); border-color: rgb(236, 37, 13);">
-                                <div class="card-header"> </div>
-                                <div class="card-body">
-                                    <a href="powerinc.html">
-                                        <img src="assets/img/content/content3.png" />
-                                    </a>
-                                    <h3 class="text-white text-center">Power Inc</h3>
-                                    <small>Trade Electricity on the Global Grid!</small>
+                    <br />
+                </div>
+                
+                <div class="col-md-6 text-center">
+                    <div class="jumbotron bg-primary text-white">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <img src="assets/img/racearena-icon.png" width="180px" height="180px" /><br />
+                                    <br />
+                                    <h3 class="text-white">Race Arena</h3>
+                                    <p class="text-white">Five race in, only Four roll away.</p>
+                                    <a class="btn btn-block btn-sm btn-outline-success" href="racearena.html">Play Now</a><br />
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <br />
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <div class="jumbotron bg-primary text-white">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <img src="assets/img/nodefornode_icon.png" width="180px" height="180px" /><br />
+                                    <br />
+                                    <h3 class="text-white">Node for Node</h3>
+                                    <p class="text-white">Buy Points with refs, in a group!</p>
+                                    <h5 class="text-danger" href="#">COMING SOON</h5><br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+                
+                <div class="col-md-6 text-center">
+                    <div class="jumbotron bg-primary text-white">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <img src="assets/img/question_icon.png" width="180px" height="180px" /><br />
+                                    <br />
+                                    <h3 class="text-white">Got an Idea?</h3>
+                                    <p class="text-white">Join our Discord and tell us!</p>
+                                    <a class="btn btn-block btn-sm btn-outline-info" href="https://discord.gg/7fCvU2h">Join Discord</a><br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">
                     
+                </div>
+                
+                <div class="col-md-4">
+                    <h3 class="text-center text-white">More Coming Soon!</h3>
+                    <br />
+                </div>
+                
+                <div class="col-md-4">
                     
                 </div>
             </div>
-        </div>
-        
+            <br />
+            
+            <footer class="container jumbotron bg-primary py-5">
         <div class="row">
-            <div class="col">
-                <p>
-                    This website uses &quot;BLK Design System&quot; by 
-                    <a href="https://www.creative-tim.com/">Creative Tim</a>.
-                </p>
+            <div class="col-12 col-md">
+                <small class="d-block mb-3 text-muted">This website was built with &lt;3, by the Core Dev Team of Arcadium Network, for the world. Any donations are greatly appreciated!</small>
+                <a class="btn btn-sm btn-block btn-success" href="#" data-toggle="modal" data-target="#donateModal">Donate to Arcadium</a>
+                <br />
+            </div>
+            <div class="col-6 col-md">
+                <h5 class="text-white">Arcadium</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="flux.html">Flux</a></li>
+                    <li><a class="text-muted" href="timelock.html">Vault</a></li>
+                    <li><a class="text-muted" href="https://games.arcadium.network/powerinc">Power Inc.</a></li>
+                    <li><a class="text-muted" href="https://games.arcadium.network/racearena">Race Arena</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5 class="text-white">ETC Friends</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="https://universalcoin.io" target="_blank">UniversalCoin</a></li>
+                    <li><a class="text-muted" href="https://commonwealth.gg" target="_blank">Commonwealth</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5 class="text-white">Developers</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="https://github.com/ArcadiumNetwork" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5 class="text-white">About</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="https://twitter.com/ArcadiumETC" target="_blank">Twitter</a></li>
+                    <li><a class="text-muted" href="https://instagram.com/arcadiumnetwork" target="_blank">Instagram</a></li>
+                    <li><a class="text-muted" href="https://discord.gg/7fCvU2h" target="_blank">Discord</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+        <br />
+        <br />
+        <br />
+        <br />
+
+    <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-primary">
+            <a class="navbar-brand" href="#"></a>
+            <div class="navbar-collapse collapse" id="navbarCollapse" style="">
+                <ul class="navbar-nav mr-auto">
+                    <div id="current"></div>
+                </ul>
+          
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#sponsorPurchaseModal">Buy this Space</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#sponsorDetailsModal">Learn More</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    
+    <!-- MODALS -->
+    <div class="modal" id="donateModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h4 class="modal-title text-white"><i class="fas fa-long-arrow-alt-right"></i>  Donate to Arcadium</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body bg-primary text-white">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col text-center">
+                                <img src="assets/img/avatars/deano.png" alt="Deano" width="50px" height="50px"><br />
+                                <b>Deano</b><br />
+                                <input type="hidden" id="deanoETC" value="DeanoETCAddressGoesHere" />
+                            </div>
+                            
+                            <div class="col text-center">
+                                <img src="assets/img/avatars/rinon.png" alt="Rinon" width="50px" height="50px"><br />
+                                <b>Rinon</b><br />
+                                <input type="hidden" id="rinonETC" value="RinonETCAddressGoesHere" />
+                            </div>
+                            
+                            <div class="col text-center">
+                                <img src="assets/img/avatars/birdman.png" alt="Birdman" width="50px" height="50px"><br />
+                                <b>Birdman</b><br />
+                                <input type="hidden" id="birdmanETC" value="BirdmanETCAddressGoesHere" />
+                            </div>
+                            
+                            <div class="col text-center">
+                                <img src="assets/img/avatars/skinner.png" alt="SirSkinner" width="50px" height="50px"><br />
+                                <b>SirSkinner</b><br />
+                                <input type="hidden" id="sirskinnerETC" value="SkinnerETCAddressGoesHere" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <br />
+                        <b>Arcadium Network Core Dev Team Wallet: </b>
+                        <code>0x2fA2c7907Cbc1Bd143861566d23Cd83200C9be9b</code><br />
+                        <a class="btn btn-block btn-sm btn-outline-success" href="https://classic.etccoopexplorer.com/address/0x2fa2c7907cbc1bd143861566d23cd83200c9be9b/transactions" target="_blank">View on Blockscout</a><br />
+                        
+                        <br />
+                        <p>Thank you very much for considering a donation to Arcadium Network! Before you continue, please be aware that anything sent to our addresses cannot be refunded - so please, only send what you can absolutely afford, and ensure you double-check details prior to making transactions.</p>
+                    </div>
+                </div>
+
+                <div class="modal-footer bg-primary text-white">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        <div class="modal" id="informationModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h4 class="modal-title text-white"><i class="fas fa-dollar-sign"></i>  What is This?</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body bg-primary text-white" id="buyArea">
+                        <h3 class="text-white">Compound Dividends</h3>
+                        <p>When others Buy and Sell their points, you will earn Dividends proportionate to how many points you hold. These Dividends are awarded in ETC, so you have a couple of options. If you choose to compound your Dividends, the ETC you have earned from others will be used to buy more Points, thus meaning you could earn more at a faster rate.</p>
+                        <br />
+                        
+                        <h3 class="text-white">Withdraw Dividends</h3>
+                        <p>If you build up a nice amount of Dividends, you may choose not to buy more Points, but instead withdraw the ETC to your wallet. Should this be what you desire, tapping &quot;Withdraw Dividends&quot; is your answer.</p>
+                        <br />
+                        
+                        <h3 class="text-white">Activate Divies</h3>
+                        <p>Divies is a Smart Contract connected to Commonwealth, which receives ETC and distributes it to holders of Points. One can contribute to Divies either by sending ETC directly to it's <a href="https://blockscout.com/etc/mainnet/address/0xd1a231ae68ebe7aec3ecdaeac4c0776eb525d969/transactions" target="_blank" class="text-success">Contract Address</a>, or by using a Dapp or service like the <a href="https://commonwealth.gg/sponsor.html" target="_blank" class="text-success">Broadcaster</a>.</p>
+                        <br />
+                        
+                        <h3 class="text-white">Activate RainMaker</h3>
+                        <p>RainMaker is a special Smart Contract: It provides a guaranteed Price Floor for the Commonwealth Vault - RainMaker can only buy and receive more Points - it can never sell, spend or send them anywhere at all. <a href="https://medium.com/@masterhax/what-is-the-rainmaker-contract-bb0a77bc3b91" target="_blank" class="text-success">Learn More Here via the Medium Post about Rainmaker</a>.</p>
+                    </div>
+
+                    <div class="modal-footer bg-primary text-white">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <script src="assets/js/jquery.min.js" type="text/javascript"></script>
-        <script src="assets/js/popper.min.js" type="text/javascript"></script>
-        <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-        <script src="assets/js/plugins/bootstrap-switch.js"></script>
-        <script src="assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
-        <script src="assets/js/plugins/chartjs.min.js"></script>
-        <script src="assets/js/plugins/moment.min.js"></script>
-        <script src="assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
-        <script src="assets/js/blk-design-system.min.js" type="text/javascript"></script>
-        
-        <script src="assets/js/tether.min.js"></script>
-        <script src="assets/js/common.min.js"></script>
-        <script src="assets/js/d3.v5.min.js"></script>
-        <script src="assets/js/alertify.min.js"></script>
-        <script src="assets/js/web3.min.js"></script>
-        
-        <script src="assets/lib/charts.js"></script>
-        <script src="assets/lib/contracts.js"></script>
-        <script src="assets/lib/home.js"></script>
-        <script src="assets/lib/masternode.js"></script>
-        <script src="assets/lib/prices.js"></script>
-        <script src="assets/lib/pure.js"></script>
-        <script src="assets/lib/rainmaker.js"></script>
-        <script src="assets/lib/sponsor.js"></script>
-        <script src="assets/lib/use.js"></script>        
-        <script src="assets/lib/util.js"></script>
-</body>
+    <div class="modal" id="sponsorPurchaseModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h4 class="modal-title text-white"><i class="fas fa-long-arrow-alt-right"></i>  Buy Adspace</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
 
+                <div class="modal-body bg-primary text-white">
+                    <form class="ui form">
+                        <div class="form-group">
+                            <label>Img URL (30x30) - Optional:</label>
+                            <input type="text" id="imgLink" class="form-control" placeholder="https://i.imgur.com/7iEyv4Q.png">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Text</label>
+                            <input type="text" id="text" class="form-control" placeholder="New ICO incoming!">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Link Text</label>
+                            <input type="text" id="hyperlinkText" class="form-control" placeholder="Click Here.">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Link (include http/https):</label>
+                            <input type="text" id="hyperlink" class="form-control" placeholder="https://company.com">
+                        </div>
+                    </form>
+                    
+                    <div class="row sponsor">
+                        <p>Preview: </p>
+                        <div id="sampleAd" class="current"></div>
+                    </div>
+                    <button id="sample"   class="btn btn-block btn-info">Generate Preview</button>
+                    <button id="purchase" class="btn btn-block btn-success">Purchase for <div id="price">price</div></button>
+                </div>
+
+                <div class="modal-footer bg-primary text-white">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="modal" id="sponsorDetailsModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h4 class="modal-title text-white"><i class="fas fa-long-arrow-alt-right"></i>  Sponsor Details</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body bg-primary text-white">
+                        <div id="currentImg" class="sponsorPrice">1234/token</div>
+                        <h3 class="text-white"><span id="currentText" class="sponsorPrice">1234/token</span></h3>
+                    <p><span id="currentLinkText" class="sponsorPrice">1234/token</span></p>
+                    <span id="currentLink" class="btn btn-block btn-primary">1234/token</span>
+                    <hr />
+                    <p>
+                        <b>Owner <span id="owner"></span></b>
+                        <i><span id="time" class="sponsorPrice"></span><span id="purchasePrice" class="sponsorPrice"></span></i>
+                    </p>
+                </div>
+
+                <div class="modal-footer bg-primary text-white">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.lazyload.min.js"></script>
+    <script src="assets/js/jquery.validation.min.js"></script>
+    <script src="assets/js/tether.min.js"></script>
+    <script src="assets/js/common.min.js"></script>
+    <script src="assets/js/d3.v5.min.js"></script>
+    <script src="assets/js/alertify.min.js"></script>
+    <script src="assets/js/semantic.min.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/web3.min.js"></script>
+    <script src="assets/js/clipboard.min.js"></script>
+    <script src="assets/js/lodash.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+
+    <script src="assets/lib/util.js"></script>
+    <script src="assets/lib/home.js"></script>
+    <script src="assets/lib/contracts.js"></script>
+    <script src="assets/lib/pure.js"></script>
+    <script src="assets/lib/rainmaker.js"></script>
+    <script src="assets/lib/masternode.js"></script>
+    <script src="assets/lib/sponsor.js"></script>
+    <script src="assets/lib/use.js"></script>
+    <script src="assets/lib/charts.js"></script>
+    <script src="assets/lib/prices.js"></script>
+</body>
 </html>
