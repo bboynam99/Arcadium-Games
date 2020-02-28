@@ -67,7 +67,7 @@
 
     <body class="profile-page">
         <div class="background-image">
-            <img src="assets/img/backgrounds/wallpaper2.jpg" style="background: background-image; height: 1000px; width: 2000px; position: fixed; z-index: -99;">
+            <img src="assets/img/backgrounds/plasma.gif" style="background: background-image; height: 1000px; width: 2000px; position: fixed; z-index: -99;">
         </div>
         
         <!-- Navbar -->
@@ -181,7 +181,7 @@
                         <div class="col-md-4">
                             <div class="card card-plain border-info animated rollIn delay-3s">                                
                                 <div class="card-coin-header">
-                                    <h6 class="text-white text-center"><i>Buy, sell or convert to grow the Divies</i></h6>                                    
+                                    <h6 class="text-white text-center"><i>Buy and Sell watts on the Global Grid!</i></h6>                                    
                                 </div>
                                 <div class="card-coin-body">
                                     <div class="row">
@@ -207,13 +207,14 @@
                     
                     <div class="row text-center">
                         <div class="col-md-6 ml-auto mr-auto">
-                            <div class="card card-coin border-info animated fadeInLeft delay-2s">                                
-                                <div class="card-coin-header text-center"><br /><h3 class="text-info"><img src="assets/img/etherum.png" alt="ETC Icon" class="img-fluid rounded" style="width: 20px; height: 25px;"> How it Works</h3></div>
-                                <div class="card-body text-white text-left">
+                            <div class="card card-coin border-info animated fadeInLeft delay-2s" style="background: rgba(0, 0, 0, 0);">                                
+                                <div class="card-coin-header text-center" style="background: rgba(0, 78, 255, 0.39);">
+                                    <br /><h3 class="text-info"><img src="assets/img/etherum.png" alt="ETC Icon" class="img-fluid rounded" style="width: 20px; height: 25px;"> How it Works</h3></div>
+                                <div class="card-body text-white text-left" style="background: rgba(0, 78, 255, 0.39);">
                                     
                                     <ul class="text-left" style="list-style-type: none;">
                                         <li>
-                                            1. Claim your free Power Cells to start the 24-Hour countdown.
+                                            1. Buy some Power Cells to start the 24-Hour countdown.
                                         </li>
                                         <p></p>
                                         <li>
@@ -222,7 +223,7 @@
                                         <p></p>
                                             <ul style="list-style-type: none;">
                                                 <li> 
-                                                    a) convert your Watts to Power Cells to double your production or
+                                                    a) convert your Watts to Power Cells to increase your production or
                                                 </li>
                                                 <p></p>
                                                 <li> 
@@ -240,11 +241,11 @@
                      </div>
                     
                         <div class="col-md-6 ml-auto mr-auto">
-                            <div class="card card-coin border-danger animated fadeInRight delay-2s">
-                                <div class="card-coin-header text-white">
+                            <div class="card card-coin border-danger animated fadeInRight delay-2s" style="background: rgba(0, 0, 0, 0);">
+                                <div class="card-coin-header text-white" style="background: rgba(0, 78, 255, 0.39);">
                                     <br /><h3 class="text-danger"><i class="fas fa-dollar-sign"></i> Buy Power</h3>
                                 </div>
-                                <div class="card-body text-white text-center">
+                                <div class="card-body text-white text-center" style="background: rgba(0, 78, 255, 0.39);">
                                     <h4 class="text-white"><span id="eggstobuy">?</span> Watts For</h4>
                                     <input class="form-control" type="number" onchange="updateBuyPrice()" step="0.01" value="0.01" id="ethtospend"><br />
                                     <a href="powerinc.html#" onclick="buyEggs2()" class="btn btn-block btn-danger">
@@ -264,17 +265,18 @@
                 <div class="container align-items-center">
                     <div class="row text-center">
                         <div class="col-md-6 ml-auto mr-auto">
-                            <div class="card card-coin border-warning animated fadeInLeft delay-2s">
-                             <div class="card-coin-header"><br /><h3 class="text-warning"><i class="fas fa-industry"></i> Your Grid</h3></div>
-                                 <div class="card-body text-white text-center">
+                            <div class="card card-coin border-warning animated fadeInLeft delay-2s" style="background: rgba(0, 0, 0, 0);">
+                             <div class="card-coin-header" style="background: rgba(0, 78, 255, 0.39);">
+                                 <br /><h3 class="text-warning"><i class="fas fa-industry"></i> Your Grid</h3>
+                                </div>
+                                 <div class="card-body text-white text-center" style="background: rgba(0, 78, 255, 0.39);">
                                      <h4 class="text-info animated tada delay-4s"><img src="assets/img/cells.jpg" alt="Power Cells" class="img-fluid rounded-circle shadow-lg btn btn-icon btn-round" style="width: 50px; height: 50px;"> &nbsp;<span class="numalien"></span> Power Cells</h4>
                                      <p><b>Generating <span id="production">?</span> watts per hour<br /></b>
                                          <b class="text-warning">(<span id="timeuntilfull">?</span> until your Cell Converter is full)
                                         </b>
                                      </p>
-                                         <a href="powerinc.html#" class="btn btn-inner" id="getfreealien" onclick="getFreeAlien(displayTransactionMessage)" padding-left:16px; padding-right:16px>Get 100 free Power Cells</a>
                                  </div>
-                                 <div class="card-footer text-white text-center">
+                                 <div class="card-footer text-white text-center" style="background: rgba(0, 78, 255, 0.39);">
                                      <a href="powerinc.html#" onclick="hatchEggs1(displayTransactionMessage)" class="btn btn-block btn-info">Convert <span id="hatchalienquantity">?</span> Watts</a><br />
                                  </div>
                             </div>
@@ -282,10 +284,12 @@
                         </div>
                         
                         <div class="col-md-6 ml-auto mr-auto">
-                            <div class="card card-coin border-success animated fadeInRight delay-2s">                                
+                            <div class="card card-coin border-success animated fadeInRight delay-2s" style="background: rgba(0, 0, 0, 0);">                                
 
-                                <div class="card-coin-header"><br /><h3 class="text-success"><i class="fas fa-dollar-sign"></i> Sell Power</h3></div>
-                                <div class="card-body text-white text-center">                                                    
+                                <div class="card-coin-header" style="background: rgba(0, 78, 255, 0.39);">
+                                    <br /><h3 class="text-success"><i class="fas fa-dollar-sign"></i> Sell Power</h3>
+                                </div>
+                                <div class="card-body text-white text-center" style="background: rgba(0, 78, 255, 0.39);">                                                    
                                     <h4 class="text-success animated tada delay-4s"><img src="assets/img/power.jpg" alt="Watts" class="img-fluid rounded-circle shadow-lg btn btn-icon btn-round" style="width: 50px; height: 50px;"> &nbsp;<span class="numeggs"></span> Watts</h4>
                                     <p><b>Generated in the last <span id="timeElapsed">?</span><br />
                                         <span class="text-success" id="sellsforexample"></span>
@@ -294,7 +298,7 @@
                                         
                                                         
                                 </div>
-                                <div class="card-footer text-white text-center">
+                                <div class="card-footer text-white text-center" style="background: rgba(0, 78, 255, 0.39);">
                                     <a href="powerinc.html#" class="btn btn-block btn-md btn-success text-dark" onclick="sellEggs(displayTransactionMessage)">Sell Watts For <span id="sellprice">?</span> ETC </a><br />
                                 </div>
                             </div>
