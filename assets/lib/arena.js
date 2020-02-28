@@ -308,10 +308,13 @@ function addressToName(address, x) {
 
 
 function determineStageStatus(players, maxPlayers) {
+    var playersNeeded = Math.floor(maxPlayers - players);
     //IF PLAYERS IS GREATER THAN 1 AND LESS THAN 5 DISPLAY OPEN STRING AND NUMBER OF REQUIRED PLAYERS
-	if(players < maxPlayers) {
-        var playersNeeded = Math.floor(maxPlayers - players);
-		el('#status').innerHTML = '<span style="color:#02c751"><b>' + openString + '</b></span> - Waiting for ' + playersNeeded + ' more player(s)';
+	if(players < maxPlayers - 1) {
+		el('#status').innerHTML = '<span style="color:#02c751"><b>' + openString + '</b></span> - Waiting for ' + playersNeeded + ' more players';
+    }
+    else if(players == maxPlayers - 1) {
+        el('#status').innerHTML = '<span style="color:#02c751"><b>' + openString + '</b></span> - Waiting for ' + playersNeeded + ' more player';
 	}
 	else {     
         //GET CURRENT ROUND NUMBER FOR NEW RACE STRING VALUE
