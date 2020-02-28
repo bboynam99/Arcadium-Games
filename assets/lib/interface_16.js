@@ -456,7 +456,7 @@
 	}
 ]
 
-	contractAddress = "0xE8be2E87d586B72461c471bED2Ee52bdf6A7b0f8"  // Changed to a new Power Inc contract, where DevFee goes to Divies
+	contractAddress = "0x2F49F1DCDE8Bc52FD8B66b46A57eff914FFB62bf"  // Changed to a new Power Inc contract, where DevFee goes to the address set in 'ceoAddress'. This is controlled by Arcadium Network.
 
 function buyEggs(eth,callback){
     var contractAbi = web3.eth.contract(abi);
@@ -469,24 +469,6 @@ function buyEggs(eth,callback){
             alertify.success("The transaction is being processed...")
             var gfsdoc = document.getElementById('getfreealien')
             gfsdoc.style.display = "none"
-            callback()
-        }
-        else{
-            //console.log('error :(')
-            alertify.error("The transaction was cancelled by the user");
-        }
-    });
-}
-
-function getFreeAlien(callback){
-    var contractAbi = web3.eth.contract(abi);
-    var myContract = contractAbi.at(contractAddress);
-    var outputData = myContract.getFreeAlien.getData();
-    var endstr=web3.eth.sendTransaction({to:contractAddress, from:null, data: outputData},
-    function(error,result){
-        if(!error){
-            //console.log('getFreeAlien ', result);
-            alertify.success("The transaction is being processed...")
             callback()
         }
         else{
@@ -514,7 +496,6 @@ function hatchEggs(ref,callback){
         }
     });
 }
-
 
 function seedMarket(eggs,eth,callback){
     var contractAbi = web3.eth.contract(abi);

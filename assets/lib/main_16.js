@@ -14,9 +14,6 @@ function main(){
 
     var installMetamask = "You are not signed into MetaMask. Please install/sign in, and try again.";
 
-    // Events audio
-    var audio = new Audio('./sounds/5.mp3');
-
     // Listen to events
     if (typeof web3 === "undefined") {
         alertify.alert(installMetamask);
@@ -38,7 +35,6 @@ function main(){
                 onHatchEggs.watch(function (err, res) {
                     if (err != null) console.error(err);
                     else {
-                        audio.play();
                         alertify.notify(res.args.Aliens + " watts have just finished converting", 'event', 5);
                         console.log(res.args.Aliens + " watts have just finished converting");
                     }
@@ -48,7 +44,6 @@ function main(){
                 onSellEggs.watch(function (err, res) {
                     if (err != null) console.error(err);
                     else {
-                        audio.play();
                         alertify.notify("Someone earned " + BigNumber(res.args.ethereumEarned).div(1e18).toFixed(6) + " ETC selling their Power", 'event', 5);
                         console.log("Someone earned " + BigNumber(res.args.ethereumEarned).div(1e18).toFixed(6) + " ETC selling Power");
                     }
@@ -58,7 +53,6 @@ function main(){
                 onBuyEggs.watch(function (err, res) {
                     if (err != null) console.error(err);
                     else {
-                        audio.play();
                         alertify.notify("Someone bought " + BigNumber(res.args.incomingEthereum).div(1e18).toFixed(6) + " ETC worth of Power", 'event', 5);
                         console.log("Someone bought " + BigNumber(res.args.incomingEthereum).div(1e18).toFixed(6) + " ETC worth of Power");
                     }
@@ -79,6 +73,7 @@ function controlLoopFaster(){
     console.log('clf')
     setTimeout(controlLoopFaster,30)
 }
+
 function refreshData(){
     var sellsforexampledoc=document.getElementById('sellsforexample')
     marketEggs(function(eggs){
@@ -131,21 +126,9 @@ function refreshData(){
         }
     }        
 });
-    /*
-    getMyStatus(function(res){                
-        var gfsdoc=document.getElementById('freeAlien')
-        gfsdoc.textContent= res
-    });
-    */
+
     getMyAlien(function(alien){
         lastNumAlien=alien
-        var gfsdoc=document.getElementById('getfreealien')
-        if(alien>0){
-            gfsdoc.style.display="none"
-        }
-        else{
-            //gfsdoc.style.display="inline-block"
-        }
         var allnumalien=document.getElementsByClassName('numalien')
         for(var i=0;i<allnumalien.length;i++){
             if(allnumalien[i]){
@@ -312,6 +295,18 @@ function displayModalMessage(message){
     //modalContent.textContent=message;
     setTimeout(removeModal,3000)
 }
+
+function updateEggNumber(eggs){
+    var hatchalienquantitydoc=document.getElementById('hatchalienquantity')
+    hatchalienquantitydoc.textContent=translateQuantity(eggs,0)
+    var allnumeggs=document.getElementsByClassName('numeggs')
+    for(var i=0;i<allnumeggs.length;i++){
+        if(allnumeggs[i]){
+            allnumeggs[i].textContent=translateQuantity(eggs)
+        }
+    }
+}
+
 function weiToDisplay(ethprice){
     return formatEthValue(web3.fromWei(ethprice,'ether'))
 }
