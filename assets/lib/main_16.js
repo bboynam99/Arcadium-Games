@@ -298,7 +298,7 @@ function displayModalMessage(message){
 
 function updateEggNumber(eggs){
     var hatchalienquantitydoc=document.getElementById('hatchalienquantity')
-    hatchalienquantitydoc.textContent=translateQuantity(eggs,0)
+    hatchalienquantitydoc.textContent=translateQuantity(eggs)
     var allnumeggs=document.getElementsByClassName('numeggs')
     for(var i=0;i<allnumeggs.length;i++){
         if(allnumeggs[i]){
