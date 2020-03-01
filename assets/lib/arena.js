@@ -153,14 +153,20 @@ function medium() {
 	main();
 }
 
-function offer() {
+function offer(players, maxPlayers) {
 	if(sac) {
 		sacrific3CInstance.offerAsSacrifice({value:offerSize, gas:350000}, function(error, result){
-        if(!error) {
+        if(!error && players != maxPlayers) {
         sacrific3CInstance.numberOfStages(function(error, result) {
             let playerStageString = result;
             el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + playerStageString + '</b>'
         })
+        }
+        else if(!error && players == maxPlayers) {
+        sacrific3CInstance.numberOfStages(function(error, result) {
+            let playerStageString = Math.floor(result++);
+            el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + playerStageString + '</b>'
+        })    
         }
         })
 	} else {
@@ -180,14 +186,20 @@ function validate() {
     });
 }
 	
-function offervault() {
+function offervault(players, maxPlayers) {
 	if(sac) {
 		sacrific3CInstance.offerAsSacrificeFromVault({gas:350000}, function(error, result){
-        if(!error) {
+        if(!error && players != maxPlayers) {
         sacrific3CInstance.numberOfStages(function(error, result) {
             let playerStageString = result;
             el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + playerStageString + '</b>'
         })
+        }
+        else if(!error && players == maxPlayers) {
+        sacrific3CInstance.numberOfStages(function(error, result) {
+            let playerStageString = Math.floor(result++);
+            el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + playerStageString + '</b>'
+        })    
         }
         })
 	} else {
