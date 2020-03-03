@@ -164,7 +164,7 @@ function offer(players, maxPlayers) {
         }
         else if(!error && players == maxPlayers) {
         sacrific3CInstance.numberOfStages(function(error, result) {
-            let playerStageString = Math.floor(result++);
+            let playerStageString = ++result;
             el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + playerStageString + '</b>'
         })    
         }
@@ -197,7 +197,7 @@ function offervault(players, maxPlayers) {
         }
         else if(!error && players == maxPlayers) {
         sacrific3CInstance.numberOfStages(function(error, result) {
-            let playerStageString = Math.floor(result++);
+            let playerStageString = ++result;
             el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + playerStageString + '</b>'
         })    
         }
