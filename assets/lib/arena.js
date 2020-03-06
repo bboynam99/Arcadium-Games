@@ -156,7 +156,7 @@ function medium() {
 function offer(players, maxPlayers) {
 	if(sac) {
 		sacrific3CInstance.offerAsSacrifice({value:offerSize, gas:350000}, function(error, result){
-        if(!error && players != maxPlayers) {
+        if(!error && players < maxPlayers) {
         sacrific3CInstance.numberOfStages(function(error, result) {
             let playerStageString = result;
             el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + playerStageString + '</b>'
@@ -189,7 +189,7 @@ function validate() {
 function offervault(players, maxPlayers) {
 	if(sac) {
 		sacrific3CInstance.offerAsSacrificeFromVault({gas:350000}, function(error, result){
-        if(!error && players != maxPlayers) {
+        if(!error && players < maxPlayers) {
         sacrific3CInstance.numberOfStages(function(error, result) {
             let playerStageString = result;
             el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + playerStageString + '</b>'

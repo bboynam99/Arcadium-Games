@@ -296,17 +296,6 @@ function displayModalMessage(message){
     setTimeout(removeModal,3000)
 }
 
-function updateEggNumber(eggs){
-    var hatchalienquantitydoc=document.getElementById('hatchalienquantity')
-    hatchalienquantitydoc.textContent=translateQuantity(eggs)
-    var allnumeggs=document.getElementsByClassName('numeggs')
-    for(var i=0;i<allnumeggs.length;i++){
-        if(allnumeggs[i]){
-            allnumeggs[i].textContent=translateQuantity(eggs)
-        }
-    }
-}
-
 function weiToDisplay(ethprice){
     return formatEthValue(web3.fromWei(ethprice,'ether'))
 }
