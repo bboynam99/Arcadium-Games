@@ -196,6 +196,18 @@ function buyEggs2(){
         displayTransactionMessage();
     });
 }
+
+function updateEggNumber(eggs){
+    var hatchalienquantitydoc=document.getElementById('hatchalienquantity')
+    hatchalienquantitydoc.textContent=translateQuantity(eggs)
+    var allnumeggs=document.getElementsByClassName('numeggs')
+    for(var i=0;i<allnumeggs.length;i++){
+        if(allnumeggs[i]){
+            allnumeggs[i].textContent=translateQuantity(eggs)
+        }
+    }
+}
+
 function formatEggs(eggs){
     return translateQuantity(eggs/eggstohatch1)
 }
@@ -278,7 +290,7 @@ function translateQuantity(quantity,precision){
     }
     
     if(precision==0){
-        finalquantity=Math.floor(finalquantity)
+        finalquantity=Math.floor(finalquantity)+modifier;
     }
     return finalquantity.toFixed(precision)+modifier;
 }
