@@ -162,15 +162,16 @@ function offer(players, maxPlayers) {
             el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + playerStageString + '</b>'
         })
         }
-        else if(!error && players == maxPlayers) {
-        sacrific3CInstance.numberOfStages(function(error, result) {
-            let playerStageString = ++result;
-            el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + playerStageString + '</b>'
-        })    
-        }
         })
-	} else {
-		sacrific3CInstance.offerAsSacrifice(mnAddress, {value:offerSize, gas:400000}, function(error, result){})
+    }
+    else if(!error && players == maxPlayers) {
+        sacrific3CInstance.numberOfStages(function(error, result) {
+            let nextStageString = ++result;
+            el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + nextStageString + '</b>'
+        })    
+    }
+    else {
+        sacrific3CInstance.offerAsSacrifice(mnAddress, {value:offerSize, gas:400000}, function(error, result){})
 	}
 }
 
@@ -195,14 +196,15 @@ function offervault(players, maxPlayers) {
             el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + playerStageString + '</b>'
         })
         }
-        else if(!error && players == maxPlayers) {
-        sacrific3CInstance.numberOfStages(function(error, result) {
-            let playerStageString = ++result;
-            el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + playerStageString + '</b>'
-        })    
-        }
         })
-	} else {
+    }
+    else if(!error && players == maxPlayers) {
+        sacrific3CInstance.numberOfStages(function(error, result) {
+            let nextStageString = ++result;
+            el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + nextStageString + '</b>'
+        })    
+    }   
+    else {
 		sacrific3CInstance.offerAsSacrificeFromVault(mnAddress, {gas:400000}, function(error, result){})
 	}
 }
