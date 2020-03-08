@@ -31,22 +31,21 @@ let playerBookInstance;
 let offerSize;
 
 //strings
-let stageStringEN = 'Race';
+let stageStringEN = 'Round';
 let p3cStatsStringEN = 'Commonwealth Stats';
 let altarStringEN = 'Your Wallet';
-let earningsStringEN = 'Your Earnings:';
+let earningsStringEN = 'Your Winnings:';
 let offerButtonStringEN = 'img/offeringEN.png';
-let validateButtonStringEN = 'VALIDATE RACE';
-let offerVaultButtonStringEN = 'USE EARNINGS FOR RACE';
-let withdrawButtonStringEN = 'WITHDRAW EARNINGS';
-let playerNumberStringEN = 'players enter a daring challenge'
-let offerSize1StringEN = 'each paying ';
-let offerSize2StringEN = 'to race!';
-let winnings1StringEN = 'Race Arena locks up Flux Points in the contract every round, which grows the dividends. ';
-let winnings2StringEN = 'One racer will receive dividends, ';
+let offerVaultButtonStringEN = 'LET IT RIDE';
+let withdrawButtonStringEN = 'COLLECT WINNINGS';
+let playerNumberStringEN = 'players try their luck'
+let offerSize1StringEN = 'each betting ';
+let offerSize2StringEN = 'to play!';
+let winnings1StringEN = 'Roulette locks up ARC Tokens in the contract every round, which grows the rewards. ';
+let winnings2StringEN = 'One player will receive the consolation prize, ';
 let winnings3StringEN = 'Everyone else receives ';
 let winnings4StringEN = 'for winning!';
-let currentStageStringEN = 'Stage ';
+let currentStageStringEN = 'Round ';
 let playerJoinedStringEN = "You've joined "
 let currentPlayersStringEN = 'Players in Game:';
 let dividendsStringEN = 'Dividends<br />';
@@ -55,20 +54,18 @@ let recentlySacrificedStringEN = 'has lost recently';
 let openStringEN = 'OPEN';
 let waitingForMoreStringEN = 'Waiting for more players...';
 let waitingForNewStringEN = 'Waiting for the next ';
-let sacrificeChosenStringEN = 'ARENA HAS CHOSEN';
+let sacrificeChosenStringEN = 'WHEEL HAS SPUN';
 let actionRequiredStringEN = 'ACTION REQUIRED';
-let racePlayersMaxStringEN = 'RACE FULL';
+let racePlayersMaxStringEN = 'TABLE FULL';
 let raceEndedStringEN = 'Waiting for the next stage!';
-let newRaceStringEN = 'RACE '
-let interactStringEN = "VALIDATE RACE <br /> So the Arena can choose the winners! <br /> Once you've validated, join the next race or wait for your earnings.";
-let raceValidatedAlertEN = "Someone has validated the Race! Join the next stage now.";
+let newRaceStringEN = 'ROUND ';
+
 
 let stageString;
 let p3cStatsString;
 let alterString;
 let earningsString;
 let offerButtonString;
-let validateButtonString;
 let offerVaultButtonString;
 let withdrawButtonString;
 let playerNumberString;
@@ -92,22 +89,15 @@ let actionRequiredString;
 let racePlayersMaxString;
 let raceEndedString;
 let newRaceString;
-let interactString;
-let raceValidatedAlert;
 
 let sacStrings =
 				[
 				"has lost",
 				"was a worthy opponent",
-				"was chosen by the Arena",
-                "spun out",
-                "blew their engine",
-                "crashed spectacularly!",
-                "has been run off the road",
-                "put up a hard fight",
-                "wasn't fast enough",
+				"bet on the wrong numbers",
+                "colour wasn't chosen",
                 "didn't make the cut",
-                "flamed out"
+                "number didn't come up",
                     
 				];
 				
@@ -133,20 +123,6 @@ function small() {
 	main();
 }
 
-/*
-function showValidate(players, maxPlayers) {
-    if(players == maxPlayers) {
-        el('#validate').disabled = false;
-        el('#validate').hidden = false;
-    }
-}
-
-function hideValidate() {
-    el('#validate').disabled = true;
-    el('#validate').hidden = true;
-}
-*/
-
 function medium() {
 	sacrific3CAddress = '0x8c841EDA4E377c06595ff7967292FC0430E81393';
 	sacrific3CContract = web3.eth.contract([{"constant":false,"inputs":[],"name":"offerAsSacrificeFromVault","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"withdraw","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"OFFER_SIZE","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"offerAsSacrifice","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"winningsPerRound","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"currentPlayers","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"tryFinalizeStage","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"numberOfStages","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"MAX_PLAYERS_PER_STAGE","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"myEarnings","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"player","type":"address"}],"name":"SacrificeOffered","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"sarifice","type":"address"}],"name":"SacrificeChosen","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"player","type":"address"},{"indexed":true,"name":"amount","type":"uint256"}],"name":"EarningsWithdrawn","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"stage","type":"uint256"}],"name":"StageInvalidated","type":"event"}]);
@@ -156,7 +132,7 @@ function medium() {
 function offer(players, maxPlayers) {
 	if(sac) {
 		sacrific3CInstance.offerAsSacrifice({value:offerSize, gas:350000}, function(error, result){
-        if(!error && players < maxPlayers) {
+        if(!error && players != maxPlayers) {
         sacrific3CInstance.numberOfStages(function(error, result) {
             let playerStageString = result;
             el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + playerStageString + '</b>'
@@ -164,33 +140,22 @@ function offer(players, maxPlayers) {
         }
         else if(!error && players == maxPlayers) {
         sacrific3CInstance.numberOfStages(function(error, result) {
-            let nextStageString = ++result;
-            el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + nextStageString + '</b>'
+            let playerStage = result;
+            var playerStageString = Math.floor(++playerStage);
+            el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + playerStageString + '</b>'
         })    
-    }
+        }
         })
-    }
+	} 
     else {
-        sacrific3CInstance.offerAsSacrifice(mnAddress, {value:offerSize, gas:400000}, function(error, result){})
+		sacrific3CInstance.offerAsSacrifice(mnAddress, {value:offerSize, gas:400000}, function(error, result){})
 	}
-}
-
-function validate() {
-	sacrific3CInstance.tryFinalizeStage(function(error, result){
-        if(!error){
-            alertify.success(raceValidatedAlert, 5);
-            callback()
-        }
-        else{
-            alertify.error("The transaction was cancelled by the user");
-        }
-    });
 }
 	
 function offervault(players, maxPlayers) {
 	if(sac) {
 		sacrific3CInstance.offerAsSacrificeFromVault({gas:350000}, function(error, result){
-        if(!error && players < maxPlayers) {
+        if(!error && players != maxPlayers) {
         sacrific3CInstance.numberOfStages(function(error, result) {
             let playerStageString = result;
             el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + playerStageString + '</b>'
@@ -198,12 +163,13 @@ function offervault(players, maxPlayers) {
         }
         else if(!error && players == maxPlayers) {
         sacrific3CInstance.numberOfStages(function(error, result) {
-            let nextStageString = ++result;
-            el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + nextStageString + '</b>'
+            let playerStage = result;
+            var playerStageString = Math.floor(++playerStage);
+            el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + playerStageString + '</b>'
         })    
         }
         })
-    }
+	} 
     else {
 		sacrific3CInstance.offerAsSacrificeFromVault(mnAddress, {gas:400000}, function(error, result){})
 	}
@@ -253,7 +219,7 @@ function main() {
 	});
 	
 	p3cInstance.balanceOf(sacrific3CAddress, function(error, result){
-		el('#p3c').innerHTML = web3.fromWei(result, 'ether').toFixed(6) + ' Points';
+		el('#p3c').innerHTML = web3.fromWei(result, 'ether').toFixed(6) + ' ARC Tokens';
 	})
 }
 
@@ -268,7 +234,7 @@ function setupJUST() {
 }
 
 function checkLastsacrific3C() {
-	el('#history').innerHTML = '<br><h5 style="color:white;">Recent Arena Losers</h5><p id="lastsaced" style="color:#dc3545;"></p> <button id="more" type="button"  class="btn btn-outline-danger" role="button" style="margin-bottom: 10px;" data-toggle="collapse" data-target="#allsaced">Show More</button> <p id="allsaced" class="collapse" style="color:#dc3545;"></p>';
+	el('#history').innerHTML = '<br><h5 style="color:white;">Recent Roulette Losers</h5><p id="lastsaced" style="color:#dc3545;"></p> <button id="more" type="button"  class="btn btn-outline-danger" role="button" style="margin-bottom: 10px;" data-toggle="collapse" data-target="#allsaced">Show More</button> <p id="allsaced" class="collapse" style="color:#dc3545;"></p>';
 	el('#more').disabled = true;
 	sacrific3CInstance.SacrificeChosen({}, {fromBlock: 9412117, toBlock: 'latest'}).get((error, eventResult) => {
 		for(let i = eventResult.length - 4; i < eventResult.length; i++) {
@@ -337,8 +303,8 @@ function determineStageStatus(players, maxPlayers) {
                 //IF THE CURRENT ROUND IS FINALIZED DISPLAY ARENA CHOSEN STRING AND REQUIRED NUMBER OF PLAYERS
                     var playersNeeded = maxPlayers;
 					el('#status').innerHTML = '<span style="color:orange"><b>' + sacrificeChosenString + '</b></span> - ' + waitingForNewString + playersNeeded + ' players...';
-                    el('#players').innerHTML = '<span style="color:#dc3545"><b>' + newRaceString + lastRoundString + ' ENDED! Join the next stage now</b></span>';
-                    el('#playerJoined').innerHTML = '<b style="color:#02c751"> Join the next race now </b>'
+                    el('#players').innerHTML = '<span style="color:#dc3545"><b>' + newRaceString + lastRoundString + ' ENDED! Join the next game now</b></span>';
+                    el('#playerJoined').innerHTML = '<b style="color:#02c751"> Join the next game now </b>'
 			})
 		}
     }	
@@ -364,18 +330,16 @@ function checkAltar() {
 			el('#vault').innerHTML +=' <b>' + web3.fromWei(result, 'ether').toFixed(8) + ' ETC</b>';
             el('#earnings').innerHTML +=' <b>' + web3.fromWei(result, 'ether').toFixed(8) + ' ETC</b>';
 			el('#withdrawArenaDivs').disabled = false;
-        //    el('#buyFluxButton').disabled = true;
-        //    el('#showBuy').hidden = true;
-		} else {
+		} 
+        else {
 			el('#vault').innerHTML += ' <b>0 ETC</b>';
             el('#earnings').innerHTML += ' <b>0 ETC</b>';
 			el('#withdrawArenaDivs').disabled = true;
-        //    el('#buyFluxButton').disabled = false;
-        //    el('#showBuy').hidden = false;
 		}
 		if(result >= offerSize) {
 			el('#offervault').disabled = false;
-		} else {
+		} 
+        else {
 			el('#offervault').disabled = true;
 		}
 	})
@@ -385,7 +349,6 @@ function changeStaticText() {
 	el('#offer').src = offerButtonString;
 	el('#offervault').innerHTML = offerVaultButtonString;
 	el('#withdrawArenaDivs').innerHTML = withdrawButtonString;
-	el('#validate').innerHTML = validateButtonString;
 }
 
 function initialLanguage() {
@@ -394,7 +357,6 @@ function initialLanguage() {
 	altarString = altarStringEN;
 	earningsString = earningsStringEN;
 	offerButtonString = offerButtonStringEN;
-	validateButtonString = validateButtonStringEN;
 	offerVaultButtonString = offerVaultButtonStringEN;
 	withdrawButtonString = withdrawButtonStringEN;
 	playerNumberString = playerNumberStringEN;
@@ -418,8 +380,6 @@ function initialLanguage() {
     racePlayersMaxString = racePlayersMaxStringEN;
     raceEndedString = raceEndedStringEN;
     newRaceString = newRaceStringEN;
-	interactString = interactStringEN;
-    raceValidatedAlert = raceValidatedAlertEN;
 }
 
 function languageEN() {
