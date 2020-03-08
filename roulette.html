@@ -33,11 +33,11 @@
         
         <meta name="description" content="Arcadium Network is a Platform built upon Commonwealth and ETC, Working towards a more decentralised future. Favouring the Pure wallets, Arcadium Network is aiming for a wholly Decentralized Future!">
         
-        <meta name="keywords" content="Payments, Payment Processing, Live Streaming, ETC Dapps, Ethereum Classic, ETC, Universal Basic Income Dapp, UBI Dapp, UBI Ethereum, Universal Basic income Ethereum, Employment Insurance, Blockchain Insurance, Coops, Cooperative, Blockchain, Blockchain Technology, Arcadium, Arcadium Network, Flux, Korax, Power Inc, Vault, Race Arena">
+        <meta name="keywords" content="Payments, Payment Processing, Live Streaming, ETC Dapps, Ethereum Classic, ETC, Universal Basic Income Dapp, UBI Dapp, UBI Ethereum, Universal Basic income Ethereum, Employment Insurance, Blockchain Insurance, Coops, Cooperative, Blockchain, Blockchain Technology, Arcadium, Arcadium Network, Flux, Korax, Power Inc, Vault, Roulette, Casino">
         
         <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
         <link rel="icon" type="image/png" href="assets/img/race-car.png">
-        <title>Race Arena | Arcadium Network</title>
+        <title>Roulette | Casino Arcadium </title>
         
         <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
         
@@ -68,7 +68,7 @@
     <body class="profile-page">                   
         
         <div class="background-image">
-            <img src="assets/img/race-arena.gif" style="background: background-image; height: 1000px; width: 2000px; position: fixed; z-index: -99;">
+            <img src="assets/img/backgrounds/Roulette1.jpg" style="background: background-image; height: 1000px; width: 2000px; position: fixed; z-index: -99;">
         </div>
                 
         <!-- Navbar -->
@@ -173,28 +173,24 @@
                 <img src="assets/img/path4.png" class="path">
                 <div class="container align-items-center">
                     <div class="row">
-                        <div class="col-lg-4 col-md-4 animated fadeInLeft delay-2s text-justify">
-                            
+                        <div class="col-lg-4 col-md-4 animated fadeInLeft delay-2s">
+                            <h5 class="text-on-back" style="font-size: 60px;">Roulette</h5>
                             <h1 class="profile-title text-left animated fadeInDown delay-3s"><i class="fas fa-flag-checkered"></i> <span id="stage"></span></h1>
                             <p class="profile-description">
                                 <br />
                                 <br />
                                 <br />
-                                <h5 class="text-on-back" style="font-size: 40px;">RACE ARENA</h5>
-                                <br />
-                                <br />
-                            <b class="text-center"> This is a game of chance and as such every round comes with the risk of losing. &nbsp;Only invest what you can afford to lose - there is no guarantee of profit or return when playing Race Arena. </b>
-                            
+                                <small class="text-white">
+                                    <b class="badge badge-pill badge-default" style="font-size: 14px">Roulette Rewards: <span id="sac"></span></b> 
+                                </small>                                
+                            </p>
                         </div>
                         <div class="col-md-6 ml-auto mr-auto">
                             <div class="card card-coin animated fadeInRight delay-2s" style="background: rgba(26, 26, 26, .85); border-color: rgb(236, 37, 13);">
                                 <div class="card-header">
                                     <img src="assets/img/race-car.png" class="img-center img-fluid rounded-circle">
-                                    <h4 class="title">Arena Has: <br /><i class="fas fa-coins"></i> <span id="p3c"></span></h4>
+                                    <h4 class="title">Table Has: <br /><i class="fas fa-coins"></i> <span id="p3c"></span></h4>
                                     <small class="text-white text-center"></small>
-                                    <small class="text-white">
-                                    <b class="badge badge-pill badge-default" style="font-size: 14px">Arena Dividends: <span id="sac"></span></b> 
-                                </small>
                                 </div>
                                 <p id="status" style="text-align: center"></p>
                                 <p id="playerJoined" style="text-align: center"></p>
@@ -224,7 +220,7 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <button type="button" class="btn btn-block btn-success text-dark" id="offer" onclick="offer()" disabled="true">
-                                                        JOIN RACE
+                                                        PLACE BET
                                                     </button>
                                                 </div>
                                             </div>
@@ -241,7 +237,7 @@
                                                 </div>
                                             </div>
                                             
-                                            <button href="#showBuy" type="button" class="btn btn-block btn-danger" role="button" data-toggle="collapse"  id="buyFluxButton">BUY FLUX POINTS</button>
+                                            <button href="#showBuy" type="button" class="btn btn-block btn-danger" role="button" data-toggle="collapse"  id="buyTokensButton">BUY GAME TOKENS</button>
                                             <p class="text-center"><span id="earnings"></span></p>
                                                 
                                                 <div class="collapse" id="showBuy">
@@ -249,7 +245,7 @@
                                                         <strong>Price: </strong><span id="tokenBuyGet">0.0000</span>
                                                     </h4>
                                                         <input placeholder="ETC to Spend..." class="form-control" type="text" id="buyInput">
-                                                            <a id="buy" class="btn btn-block btn-success" href="#">Buy Points</a>
+                                                            <a id="buy" class="btn btn-block btn-success" href="#">Buy Tokens</a>
                                                             <div id="buyAmount" class="btn btn-outline-danger btn-block text-white" onclick="buyFluxArena()">       <i>How much will you buy?</i>
                                                             </div> 
                                                 </div>                                                                                        
@@ -275,13 +271,13 @@
                                         <div class="tab-pane" id="linkd">
                                             <div class="tab-content tab subcategories text-center">
                                                 <div class="col-lg-12 col-md-12 animated fadeInLeft delay-.7s">
-                                                    <h1 class="profile-title text-left animated fadeInDown delay-1s"><i class="fas fa-coins"></i> <span id="myCropTokens"></span> Points</h1>
+                                                    <h1 class="profile-title text-left animated fadeInDown delay-1s"><i class="fas fa-coins"></i> <span id="myCropTokens"></span> Tokens</h1>
                                                     <h5 class="text-on-back"><i class="fab fa-ethereum"></i> <span id="myETCValue">0</span> ETC</h5>
                                                     <p class="profile-description animated flipInX delay-1s">
                                                         <br />
                                 
                                                         <small class="text-white">
-                                                            <b class="badge badge-pill badge-default" style="font-size: 14px;">Your Dividends: <span id="myCropDividendsInfo"></span> ETC</b> 
+                                                            <b class="badge badge-pill badge-default" style="font-size: 14px;">Your Rewards: <span id="myCropDividendsInfo"></span> ETC</b> 
                                                         </small> 
                                 
                                                     </p>
@@ -311,7 +307,7 @@
                         <div class="col">
                             <div class="card card-plain">
                                 <div class="card-header">
-                                    <h1 class="profile-title text-left">Race Arena</h1>
+                                    <h1 class="profile-title text-left">Arcadium Roulette</h1>
                                     <h5 class="text-on-back" style="font-size: 112px;">Stats</h5>
                                 </div>
                                 <div class="card-body">
@@ -333,12 +329,12 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3">
-                            <h1 class="title">Flux</h1>
+                            <h1 class="title">ARC</h1>
                         </div>
                         <div class="col-md-3">
                             <ul class="nav">
                                 <li class="nav-item"><a href="https://games.arcadium.network" class="nav-link">Home</a></li>
-                                <li class="nav-item"><a href="https://flux.arcadium.networl/flux" class="nav-link">Flux</a></li>
+                                <li class="nav-item"><a href="https://flux.arcadium.network/flux" class="nav-link">ARC</a></li>
                                 <li class="nav-item"><a href="https://games.arcadium.network/racearena.html" class="nav-link">Race Arena</a></li>
                                 <li class="nav-item"><a href="https://games.arcadium.network/powerinc.html" class="nav-link">Power Inc</a></li>
                                 <li class="nav-item"><a href="https://flux.arcadium.network/timelock" class="nav-link">TimeLock</a></li>
@@ -413,6 +409,6 @@
         <script src="assets/lib/use.js"></script>
         <script src="assets/lib/charts.js"></script>
         <script src="assets/lib/prices.js"></script>
-        <script src="assets/lib/arena.js"></script>
+        <script src="assets/lib/roulette.js"></script>
     </body>
 </html>
