@@ -156,13 +156,13 @@ function medium() {
 function offer(players, maxPlayers) {
 	if(sac) {
 		sacrific3CInstance.offerAsSacrifice({value:offerSize, gas:350000}, function(error, result){
-        if(!error && players < maxPlayers) {
+        if(players < maxPlayers && !error) {
         sacrific3CInstance.numberOfStages(function(error, result) {
             let playerStageString = result;
             el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + playerStageString + '</b>'
         })
         }
-        else if(!error && players == maxPlayers) {
+        else if(players == maxPlayers && !error) {
         sacrific3CInstance.numberOfStages(function(error, result) {
             let nextStageString = ++result;
             el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + nextStageString + '</b>'
@@ -175,6 +175,7 @@ function offer(players, maxPlayers) {
 	}
 }
 
+/*
 function validate() {
 	sacrific3CInstance.tryFinalizeStage(function(error, result){
         if(!error){
@@ -186,17 +187,18 @@ function validate() {
         }
     });
 }
-	
+*/
+
 function offervault(players, maxPlayers) {
 	if(sac) {
 		sacrific3CInstance.offerAsSacrificeFromVault({gas:350000}, function(error, result){
-        if(!error && players < maxPlayers) {
+        if(players < maxPlayers && !error) {
         sacrific3CInstance.numberOfStages(function(error, result) {
             let playerStageString = result;
             el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + playerStageString + '</b>'
         })
         }
-        else if(!error && players == maxPlayers) {
+        else if(players == maxPlayers && !error) {
         sacrific3CInstance.numberOfStages(function(error, result) {
             let nextStageString = ++result;
             el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + nextStageString + '</b>'
