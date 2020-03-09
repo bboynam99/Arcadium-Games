@@ -218,12 +218,15 @@ function translateQuantity(quantity,precision){
     if(precision == undefined){
         precision=0             
         if(quantity>1000000000000){
-            precision=3
-        }
-        if(quantity>1000000){
             precision=2
         }
+        if(quantity>1000000){
+            precision=1
+        }
         if(quantity<1000000){
+            precision=undefined
+        }
+        if(quantity<100000){
             precision=1
         }
         if(quantity<1000){
