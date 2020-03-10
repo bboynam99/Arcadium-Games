@@ -47,7 +47,7 @@ let winnings2StringEN = 'One racer will receive dividends, ';
 let winnings3StringEN = 'Everyone else receives ';
 let winnings4StringEN = 'for winning!';
 let currentStageStringEN = 'Stage ';
-let playerJoinedStringEN = "You've joined "
+let playerJoinedStringEN = "You've joined the race!"
 let currentPlayersStringEN = 'Players in Game:';
 let dividendsStringEN = 'Dividends<br />';
 let lockedUpStringEN = 'Locked Up<br />';
@@ -153,26 +153,16 @@ function medium() {
 	main();
 }
 
-function offer(players, maxPlayers) {
-	if(sac && players < maxPlayers) {
+function offer() {
+	if(sac) {
 		sacrific3CInstance.offerAsSacrifice({value:offerSize, gas:350000}, function(error, result){
         if(!error) {
         sacrific3CInstance.numberOfStages(function(error, result) {
             let playerStageString = result;
-            el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + playerStageString + '</b>'
+            el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + '</b>'
         })
         }
         })
-    }
-    else if(sac && players == maxPlayers) {
-        sacrific3CInstance.offerAsSacrifice({value:offerSize, gas:350000}, function(error, result){
-        if(!error) {
-        sacrific3CInstance.numberOfStages(function(error, result) {
-            let nextStageString = ++result;
-            el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + nextStageString + '</b>'
-        })    
-        }
-        })   
     }
     else {
         sacrific3CInstance.offerAsSacrifice(mnAddress, {value:offerSize, gas:400000}, function(error, result){})
@@ -193,24 +183,14 @@ function validate() {
 }
 */
 
-function offervault(players, maxPlayers) {
-	if(sac && players < maxPlayers) {
+function offervault() {
+	if(sac) {
 		sacrific3CInstance.offerAsSacrificeFromVault({gas:350000}, function(error, result){
         if(!error) {
         sacrific3CInstance.numberOfStages(function(error, result) {
             let playerStageString = result;
-            el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + playerStageString + '</b>'
+            el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + '</b>'
         })
-        }
-        })
-    }
-    else if(sac && players == maxPlayers) {
-        sacrific3CInstance.offerAsSacrificeFromVault({gas:350000}, function(error, result){
-        if(!error) {
-        sacrific3CInstance.numberOfStages(function(error, result) {
-            let nextStageString = ++result;
-            el('#playerJoined').innerHTML = '<b style="color:#02c751">' + playerJoinedString + currentStageString + nextStageString + '</b>'
-        })    
         }
         })
     }
